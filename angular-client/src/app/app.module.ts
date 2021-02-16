@@ -18,12 +18,10 @@ import { HomeComponent } from './components/home/home.component';
 import { PhaserioComponent } from './components/phaserio/phaserio.component';
 import { BabylonjsComponent } from './components/babylonjs/babylonjs.component';
 import { ThreejsComponent } from './components/threejs/threejs.component';
-import { SocketioComponent } from './components/socketio/socketio.component';
 import { ApiComponent } from './components/api/api.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Services
-import { SocketioService } from './services/socketio/socketio.service';
 import { ApiService } from './services/api/api.service';
 import { PlayerService } from './services/player/player.service';
 import { GunService } from './services/gun/gun.service';
@@ -37,7 +35,6 @@ import { FpsService } from './services/fps/fps.service';
     PhaserioComponent,
     BabylonjsComponent,
     ThreejsComponent,
-    SocketioComponent,
     ApiComponent
   ],
   imports: [
@@ -53,7 +50,6 @@ import { FpsService } from './services/fps/fps.service';
     BrowserAnimationsModule, // import http client module
   ],
   providers: [
-              SocketioService,
               ApiService,
               PlayerService,
               GunService,
