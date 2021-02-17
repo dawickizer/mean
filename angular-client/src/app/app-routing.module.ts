@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PhaserioComponent } from './components/phaserio/phaserio.component';
 import { BabylonjsComponent } from './components/babylonjs/babylonjs.component';
 import { ThreejsComponent } from './components/threejs/threejs.component';
+import { ColyseusComponent } from './components/colyseus/colyseus.component';
 import { ApiComponent } from './components/api/api.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'phaserio', component: PhaserioComponent },
   { path: 'babylonjs', component: BabylonjsComponent },
   { path: 'threejs', component: ThreejsComponent },
+  { path: 'colyseus', component: ColyseusComponent },
   { path: 'api', component: ApiComponent },
 ];
 

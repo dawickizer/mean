@@ -101,6 +101,8 @@ export class FpsService {
     this.socket.on('user-connected-broadcast', (data: string) => this.updateUserLogs(data));
     this.socket.on('user-disconnected-broadcast', (data: string) => this.updateUserLogs(data));
     this.socket.on('kill-logs-broadcast', (data: string) => this.updateKillLogs(data));
+
+    this.socket.on('game-state', (data: string) => console.log(data));
   }
 
   addPhysics() {

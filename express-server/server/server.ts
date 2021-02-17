@@ -46,7 +46,8 @@ io.on('connection', (socket: any) => {
     io.emit('user-disconnected-broadcast', `${socket.handshake.query.username} left the lobby`);
   });
 
-  socket.on('kill-logs-broadcast', (log: string) => io.emit('kill-logs-broadcast', log))
+  socket.on('kill-logs-broadcast', (log: string) => io.emit('kill-logs-broadcast', log));
+
 });
 
  // Listen on provided port, on all network interfaces.

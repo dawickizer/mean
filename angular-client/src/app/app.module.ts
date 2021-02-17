@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PhaserioComponent } from './components/phaserio/phaserio.component';
 import { BabylonjsComponent } from './components/babylonjs/babylonjs.component';
 import { ThreejsComponent } from './components/threejs/threejs.component';
+import { ColyseusComponent } from './components/colyseus/colyseus.component';
 import { ApiComponent } from './components/api/api.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -27,6 +28,7 @@ import { PlayerService } from './services/player/player.service';
 import { GunService } from './services/gun/gun.service';
 import { FpsService } from './services/fps/fps.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { FpsService } from './services/fps/fps.service';
     PhaserioComponent,
     BabylonjsComponent,
     ThreejsComponent,
-    ApiComponent
+    ApiComponent,
+    ColyseusComponent
   ],
   imports: [
     BrowserModule,
