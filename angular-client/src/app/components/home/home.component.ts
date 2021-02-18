@@ -15,6 +15,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   play() {
-    this.router.navigate(['/babylonjs'], { queryParams: { username: exists(this.username) } });
+    this.router.navigate(['/colyseus'], { queryParams: { username: exists(this.username) } });
   }
 }
