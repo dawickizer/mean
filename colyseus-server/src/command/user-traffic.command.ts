@@ -12,7 +12,7 @@ export class OnJoinCommand extends Command<Game, {
     let player: Player = new Player();
     player.username = username;
     player.sessionId = sessionId;
-    this.state.players.push(player);
+    this.state.players.set(sessionId, player);
     this.room.broadcast('user-joined', `${player.username} joined room: ${this.room.roomId} with session: ${player.sessionId}`);
   }
 
@@ -23,9 +23,8 @@ export class OnLeaveCommand extends Command<Game, {
 }> {
     
   execute({ client }: any) {
-    let index = this.state.players.findIndex((player: Player) => player.sessionId == client.sessionId);
-    let player = this.state.players.splice(index, 1)[0];
+    let player = this.state.players.get(client.sessionId);
     this.room.broadcast('user-left', `${player.username} left room: ${this.room.roomId} with session: ${player.sessionId}`);
+    this.state.players.delete(client.sessionId);
   }
-
 }

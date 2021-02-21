@@ -29,7 +29,7 @@ export class GameRoom extends Room {
   onDispose() {}
 
   handleMessages() {
-    this.onMessage('input', (client, message) => {
+    this.onMessage('user-input', (client, message) => {
       this.dispatcher.dispatch(new UserInputCommand(), {
         message: message
       });

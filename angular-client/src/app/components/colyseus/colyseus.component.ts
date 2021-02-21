@@ -45,7 +45,7 @@ export class ColyseusComponent implements OnInit {
       console.log(message);
     });
 
-    this.room.onMessage('input', (message) => {
+    this.room.onMessage('user-input', (message) => {
       console.log(message);
     });
 
@@ -58,25 +58,25 @@ export class ColyseusComponent implements OnInit {
 
       switch(event.code) {
         case 'KeyW':
-          this.room.send('input', `${this.username} is moving forward`);
+          this.room.send('user-input', `${this.username} is moving forward`);
           break;
         case 'KeyA':
-          this.room.send('input', `${this.username} is moving left`);
+          this.room.send('user-input', `${this.username} is moving left`);
           break;
         case 'KeyS':
-          this.room.send('input', `${this.username} is moving backward`);
+          this.room.send('user-input', `${this.username} is moving backward`);
           break;
         case 'KeyD':
-          this.room.send('input', `${this.username} is moving right`);
+          this.room.send('user-input', `${this.username} is moving right`);
           break;
         case 'ShiftLeft':
-          this.room.send('input', `${this.username} is sprinting`);
+          this.room.send('user-input', `${this.username} is sprinting`);
           break;
         case 'Space':
-          this.room.send('input', `${this.username} is jumping`);
+          this.room.send('user-input', `${this.username} is jumping`);
           break;
         case 'KeyR':
-          this.room.send('input', `${this.username} is reloading`);
+          this.room.send('user-input', `${this.username} is reloading`);
           break;
       }
     });
@@ -85,19 +85,19 @@ export class ColyseusComponent implements OnInit {
 
       switch(event.code) {
         case 'KeyW':
-          this.room.send('input', `${this.username} stopped moving forward`);
+          this.room.send('user-input', `${this.username} stopped moving forward`);
           break;
         case 'KeyA':
-          this.room.send('input', `${this.username} stopped moving left`);
+          this.room.send('user-input', `${this.username} stopped moving left`);
           break;
         case 'KeyS':
-          this.room.send('input', `${this.username} stopped moving backward`);
+          this.room.send('user-input', `${this.username} stopped moving backward`);
           break;
         case 'KeyD':
-          this.room.send('input', `${this.username} stopped moving right`);
+          this.room.send('user-input', `${this.username} stopped moving right`);
           break;
         case 'ShiftLeft':
-          this.room.send('input', `${this.username} stopped sprinting`);
+          this.room.send('user-input', `${this.username} stopped sprinting`);
           break;
       }
     });
@@ -106,10 +106,10 @@ export class ColyseusComponent implements OnInit {
 
       switch(event.button) {
         case 0:
-          this.room.send('input', `${this.username} is firing weapon`);
+          this.room.send('user-input', `${this.username} is firing weapon`);
           break;
         case 2:
-          this.room.send('input', `${this.username} is aiming down sight`);
+          this.room.send('user-input', `${this.username} is aiming down sight`);
           break;
       }
     });
@@ -118,10 +118,10 @@ export class ColyseusComponent implements OnInit {
 
       switch(event.button) {
         case 0:
-          this.room.send('input', `${this.username} stopped firing weapon`);
+          this.room.send('user-input', `${this.username} stopped firing weapon`);
           break;
         case 2:
-          this.room.send('input', `${this.username} stopped aiming down sight`);
+          this.room.send('user-input', `${this.username} stopped aiming down sight`);
           break;
       }
     });

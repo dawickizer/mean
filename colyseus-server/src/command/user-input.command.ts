@@ -7,7 +7,7 @@ export class UserInputCommand extends Command<Game, {
     
   execute({ message }: any) {
     console.log(message);
-    this.room.broadcast('input', message);
+    this.room.broadcast('user-input', message);
   }
 
 }
