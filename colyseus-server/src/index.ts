@@ -5,7 +5,7 @@ import { Server } from 'colyseus';
 import { monitor } from '@colyseus/monitor';
 // import socialRoutes from '@colyseus/social/express'
 
-import { GameRoom } from './rooms/game-room';
+import { GameRoom } from './room/game.room';
 
 const port = Number(process.env.PORT || 2567);
 const app = express()

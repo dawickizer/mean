@@ -34,7 +34,7 @@ export class ColyseusComponent implements OnInit {
     this.room = await this.client.joinOrCreate('game_room', {username: this.username});
 
     this.room.onStateChange((state) => {
-      console.log(state);
+      console.log(state.toJSON());
     });
 
     this.room.onMessage('user-joined', (message) => {
