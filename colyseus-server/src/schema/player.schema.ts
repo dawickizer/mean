@@ -10,6 +10,6 @@ export class Player extends Schema {
   sessionId: string;
 
   @type(Position)
-  position: Position;
+  position: Position = new Position();
 
 }
