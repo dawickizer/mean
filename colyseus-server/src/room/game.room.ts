@@ -1,6 +1,7 @@
 import { Room, Client } from "colyseus";
 import { Dispatcher } from "@colyseus/command";
 import { OnJoinCommand, OnLeaveCommand } from "../command/user-traffic.command";
+import { UserInputCommand } from "../command/user-input.command";
 import { Game } from "../schema/game.schema";
 
 export class GameRoom extends Room {
@@ -9,10 +10,7 @@ export class GameRoom extends Room {
 
   onCreate(options: any) {
     this.setState(new Game());
-    this.onMessage('input', (client, message) => {
-      console.log(message);
-      this.broadcast('input', message);
-    });
+    this.handleMessages();
   }
 
   onJoin(client: Client, options: any) {
@@ -26,9 +24,16 @@ export class GameRoom extends Room {
     this.dispatcher.dispatch(new OnLeaveCommand(), {
       client: client
     });
-
   }
 
   onDispose() {}
+
+  handleMessages() {
+    this.onMessage('input', (client, message) => {
+      this.dispatcher.dispatch(new UserInputCommand(), {
+        message: message
+      });
+    });
+  }
 
 }
