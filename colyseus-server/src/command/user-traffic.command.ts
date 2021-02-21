@@ -13,7 +13,7 @@ export class OnJoinCommand extends Command<Game, {
     player.username = username;
     player.sessionId = sessionId;
     player.position.x = 0;
-    player.position.y = 5;
+    player.position.y = Math.floor(Math.random() * 20) + 1;
     player.position.z = 0;
     this.state.players.set(sessionId, player);
     this.room.broadcast('user-joined', `${player.username} joined room: ${this.room.roomId} with session: ${player.sessionId}`);

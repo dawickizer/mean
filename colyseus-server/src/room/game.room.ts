@@ -7,7 +7,6 @@ import { Game } from "../schema/game.schema";
 export class GameRoom extends Room {
 
   dispatcher = new Dispatcher(this);
-
   onCreate(options: any) {
     this.setState(new Game());
     this.handleMessages();
